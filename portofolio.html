@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Alwendo Venensius Sianturi | QA/QC Tester Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #4ade80;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero & About Section */
+        header {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 span {
+            color: var(--primary);
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+
+        .highlight-box {
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        /* General Section Layout */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        /* Skills/Core Competencies Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Projects Layout */
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .project-block {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 2rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .project-title h3 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .project-title p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #334155;
+            color: var(--text-main);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tag.success-tag {
+            background-color: rgba(74, 222, 128, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Data Tables Section */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 1rem;
+            background-color: #0f172a;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #020617;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Console Log Windows */
+        .console-window {
+            background-color: #020617;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1.5rem;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .console-comment { color: #64748b; }
+        .console-keyword { color: #f43f5e; }
+        .console-string { color: #10b981; }
+        .console-number { color: #f59e0b; }
+
+        /* Footer Section */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            header h1 { font-size: 2.25rem; }
+            th, td { padding: 0.75rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="about">
+        <div class="hero-container">
+            <span class="badge">QA/QC Tester Engineer</span>
+            <h1>Hello, I am <br><span>Michael Alwendo Venensius Sianturi</span></h1>
+            <p class="lead">
+                Result-oriented Quality Assurance Engineer with over 2 years of experience specializing in manual and automated testing across banking and enterprise systems.
+            </p>
+            <p class="lead highlight-box">
+                Currently serving as the sole QA handling the entire testing cycle for internal projects at Adaro Indonesia, where I successfully standardized manual testing, UAT, and WIN QC documentation.
+            </p>
+            <p class="lead">
+                Passionate about ensuring high software quality, optimizing testing workflows, and collaborating with cross-functional teams to deliver seamless user experiences.
+            </p>
+        </div>
+    </header>
+
+    <section id="skills">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-robot"></i>
+                <h3>Web Automation</h3>
+                <p>Proficient in web automation testing using Katalon Studio integrated into deployment pipelines.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>API Testing</h3>
+                <p>Extensive hands-on expertise performing backend REST API testing operations via Postman.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Security & Perf</h3>
+                <p>Capable of performing automated basic security analysis and SQL injection sweeps via SQL Map.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-list-check"></i>
+                <h3>Test Lifecycle</h3>
+                <p>Adept at utilizing Azure DevOps, HP ALM, and Jira to manage test suites and track application defects.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Work Projects & Documentation</h2>
+        <div class="project-container">
+
+            <div class="project-block">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>OMDB Functional Test Scenarios</h3>
+                        <p>Adaro Products Module Framework (MAD & MCC Sheets)</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Manual Testing</span>
+                        <span class="tag">Test Scenario</span>
+                        <span class="tag">BRD Compliance</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Making comprehensive and executable core Test Scenarios built straight from Business Requirement Documentation (BRD) rules mapping live asset operations.
+                </p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Step Description</th>
+                                <th>Transaction / Validation</th>
+                                <th>Input Steps Data</th>
+                                <th>Expected Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Verify addition of market dropdown filter elements on Calculation Sheet containing Domestic and International market selections.</td>
+                                <td>Validate operational market item query filtering execution on Calculation Sheet MAD & MCC views.</td>
+                                <td>1. Authenticate & Login to OMDB<br>2. Open Contract Management -> Calculation Sheet Dashboard -> Calculation Sheet MAD<br>3. Pick specific Market filter and trigger Apply Filter button.</td>
+                                <td>System successfully filters and displays matching asset items dynamically.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Verify setting configuration parameters to control Calculation Sheet master lists constrained by active Contract Periods.</td>
+                                <td>Validate configuration setups on Calculation Sheet period configurations.</td>
+                                <td>1. Login to OMDB App<br>2. Navigate to Contract Management -> Period Setting<br>3. Press Create, compile setup records, and click Save. Check records inside MAD interface.</td>
+                                <td>System stores record data configurations smoothly and updates targeted analytical lists.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>HR System Robustness Validation</h3>
+                        <p>Negative Testing on Corporate Travel Lumpsum Accounts</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Negative Test</span>
+                        <span class="tag">Input Validation</span>
+                        <span class="tag">Data Protection</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Designing extreme fault scenarios to verify system stability against unexpected structural formatting, character violations, and restricted state modifications.
+                </p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Focus Module</th>
+                                <th>Test Intent</th>
+                                <th>Negative Input/Action</th>
+                                <th>Expected Enforcement Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Add Lumpsum Records</td>
+                                <td>Validate rejection of alphabetic or non-numeric assets on GL Account fields.</td>
+                                <td>Submit text strings inside critical database routing inputs during expense generation.</td>
+                                <td>System drops submission data and throws an enforcement alert confirming GL Account values must be 4-20 digit integers.</td>
+                            </tr>
+                            <tr>
+                                <td>Edit Lumpsum Records</td>
+                                <td>Validate constraint locks blocking unauthorized adjustments to travel expense base nominal parameters.</td>
+                                <td>Attempt unauthorized override on field data parameters marked as Read-Only state.</td>
+                                <td>Values remain strictly non-editable, preserving structural relational integrity records perfectly.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>OMDB Shipment REST API Testing</h3>
+                        <p>Backend Route Integration Testing via Postman & Katalon</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">API Testing</span>
+                        <span class="tag">Postman</span>
+                        <span class="tag success-tag"><i class="fa-solid fa-circle-check"></i> 200 OK</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Verifying endpoint endpoints connectivity to enable data mapping streams between internal logistics services (OMDB system pipelines) and platform endpoints (ARMADA).
+                </p>
+                <div class="console-window">
+                    <span class="console-comment">// GET https://api.omdb.internal/api/v1/omdb-shipment/all?page=1&pageSize=50</span><br>
+                    {<br>
+                    &nbsp;&nbsp;<span class="console-keyword">"Status"</span>: <span class="console-string">"success"</span>,<br>
+                    &nbsp;&nbsp;<span class="console-keyword">"Message"</span>: <span class="console-string">"Data retrieved successfully"</span>,<br>
+                    &nbsp;&nbsp;<span class="console-keyword">"Data"</span>: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="console-keyword">"TotalRecords"</span>: <span class="console-number">13701</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="console-keyword">"Shipments"</span>: [<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="console-keyword">"OBJECT ID"</span>: <span class="console-string">"ADARO_20260605_0001"</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;]<br>
+                    &nbsp;&nbsp;}<br>
+                    }
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>Database Penetration Assessment</h3>
+                        <p>Automated SQL Injection Diagnostic Checks (SQL Map Engine)</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Security Testing</span>
+                        <span class="tag">SQL Map</span>
+                        <span class="tag success-tag"><i class="fa-solid fa-shield"></i> Clean / Passed</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    Proactively scanning core portal routes against blind and union-based injection attacks to ensure robust defensive code shielding internal database records.
+                </div>
+                <div class="console-window" style="background-color: #0c0a09; color: #e7e5e4;">
+                    <span style="color: #94a3b8;">[INFO] testing connection to back-end DBMS server...</span><br>
+                    <span style="color: #94a3b8;">[INFO] the back-end DBMS is Microsoft SQL Server (Azure RTM 12.0.2000)</span><br>
+                    web server operating system: Windows Server IIS 10.0 framework<br>
+                    target database instances detected: [38 available instances]<br>
+                    &nbsp;&nbsp;[*] AdaroIndonesia_Live_DB<br>
+                    &nbsp;&nbsp;[*] ERPSatellite_Development<br>
+                    <span style="color: #4ade80;">[VERDICT] Target parameter points are completely secure against unauthorized query tampering.</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Michael Alwendo Venensius Sianturi. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #64748b;">Built cleanly as a responsive digital asset compilation platform showcasing end-to-end software test achievements.</p>
+    </footer>
+
+</body>
+</html>
